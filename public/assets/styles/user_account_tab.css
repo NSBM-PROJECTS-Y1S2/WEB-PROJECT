@@ -1,0 +1,253 @@
+
+body{
+  background-position: center;
+}
+.navbar{
+  background-color: #002e45;
+}
+.nav-item{
+  margin-right: 30px;
+}
+.navbar-nav{
+  margin-left: 30px;
+}
+.navbar-brand{
+  width: 120px;
+  margin: 0%;
+  padding: 0%;
+  padding-left: 10px;
+}
+.navbar-Toggler{
+  background-color: #ffffff00;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+.navbar-Toggler:hover{
+  transform: scale(1.1);
+}
+.cart-img{
+  filter: invert(1);
+  opacity: 0.5;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+.badge{
+  font-size: 9px;
+  margin-top: 1cap;
+  padding: 2px;
+  position: absolute;
+  opacity: 0.7;
+  background-color:#ffffff25;
+
+}
+@media screen and (min-width: 990px){
+  .navbar-Toggler{
+      display: none;
+  }
+}
+.search-bar{
+  background-color: #ffffff13;
+  color: white;
+  border: #002e45;
+}
+.search-bar:focus{
+  background-color: #ffffff00;
+}
+.search-icon{
+  background: #ffffff15;
+}
+.search-icon:hover{
+  background: #ffffff36;
+}
+.dropdown-menu{
+  background-color: #000629;
+  border: none;
+}
+.dropdown-item:hover{
+  opacity: 0.7;
+  transform: scale(1.005);
+  background-color: #002e4500;
+}
+.dropdown-header{
+  color: white;
+  padding-left: 10px;
+}
+#mainContainer{
+  margin-top: 80px;
+}
+.mainHeader{
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#imgInput{
+  display: none;
+}
+#profileImage {
+  margin-top: 20px;
+  margin-left: 25%;
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the entire area */
+  border: 2px solid #ccc; /* Optional: add a border for visual clarity */
+}
+#savebtn{
+  display: block;
+  background-color: #00062977;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px;
+  margin-left: 30%;
+}
+#savebtn:hover{
+  background-color: #000629;
+  color: white;
+}
+.details{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.personalTxt{
+  font-size: 30px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+#tables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+}
+.table {
+  width: 100%;
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#editbtn{
+  background-color: #ffffff20;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 20px;
+}
+.popup-form {
+  display: none;
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.466);
+}
+.form-content {
+  background-color: #363636;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+#editSavebtn{
+  color: white;
+  background-color: #aaaaaa6e;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 42%;
+}
+#editSavebtn:hover{
+  background-color: #fffcfc1f;
+  color: white;
+
+}
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#mainSavebtn{
+  color: white;
+  background-color: #00062977;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  width: 200px;
+  margin-left: 42%;
+}
+#mainSavebtn:hover{
+  background-color: #000629;
+  color: white;
+}
+h2 {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+footer{
+  margin-top: 100px;
+  background-color:#002e45;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.hr-thiker{
+  width: 250px;
+  height: 2px;
+  background-color:antiquewhite;
+  border:none;
+}
+.footer-logo-bar{
+  filter: invert(0.3);
+  width: 25px;
+  height: 25px;
+  margin-inline-end: 35px;
+  margin-left: 7px;
+}
+.footer-logo-bar:hover{
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+.footer-link{
+  text-decoration: none;
+  color:white;
+}
+
+.end-text{
+  background-color: #002e45;
+  font-size: smaller;
+}
+.all-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.set-width {
+  height:50%;
+}
+
+/* Ensure the container is centered vertically and horizontally */
+/* body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+
+
+
