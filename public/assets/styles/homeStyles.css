@@ -1,0 +1,247 @@
+body{
+    background-position: center;
+}
+.navbar{
+    background-color: #002e45;
+}
+.nav-item{
+    margin-right: 30px;
+}
+.navbar-nav{
+    margin-left: 30px;
+}
+.navbar-brand{
+    width: 120px;
+    margin: 0%;
+    padding: 0%;
+    padding-left: 10px;
+}
+.navbar-Toggler{
+    background-color: #ffffff00;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+.navbar-Toggler:hover{
+    transform: scale(1.1);
+}
+.cart-img{
+    filter: invert(1);
+    opacity: 0.5;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+.badge{
+    font-size: 9px;
+    margin-top: 1cap;
+    padding: 2px;
+    position: absolute;
+    opacity: 0.7;
+    background-color:#ffffff25;
+
+}
+@media screen and (min-width: 990px){
+    .navbar-Toggler{
+        display: none;
+    }
+}
+.search-bar{
+    background-color: #ffffff13;
+    color: white;
+    border: #002e45;
+}
+.search-bar:focus{
+    background-color: #ffffff00;
+}
+.search-icon{
+    background: #ffffff15;
+}
+.search-icon:hover{
+    background: #ffffff36;
+}
+.dropdown-menu{
+    background-color: #000629;
+    border: none;
+}
+.dropdown-item:hover{
+    opacity: 0.7;
+    transform: scale(1.005);
+    background-color: #002e4500;
+}
+.dropdown-header{
+    color: white;
+    padding-left: 10px;
+}
+.custom-carousel{
+    max-height: 400px; 
+    margin-top: 55px;
+    margin-left: 10px;
+}
+.card-title{
+    margin-left: 5px;
+}
+.card-main{
+    width:300px;
+    background-color: #002e45;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    padding-left: 5%;
+    margin-top: 55px;
+}
+.accordion-header{
+    text-decoration: none;
+    color: white;
+    margin-top: 12.6px;
+    font-size: medium;
+}
+.accordion-body-link{
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    font-size: 14px;
+}
+#dropdown-categories{
+    display: none;
+}
+@media screen and (max-width: 1600px){
+    .card-main{
+        width: 360px;
+    }
+    .custom-carousel{
+        max-width: 1400px;
+        margin-left: 25px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .card-main{
+        width: 300px;
+    }
+    .accordion-header{
+        font-size: smaller;
+        margin-top: 15.5px;
+    }
+    .custom-carousel{
+        margin-left: 25px;
+    }
+    .accordion-body-link{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 990px){
+    .card-main{
+        display: none;
+    }
+    #dropdown-categories{
+        display: block;
+    }
+    #categories-dropmenu{
+        font-size: small;
+    }
+    .custom-carousel{
+        margin-top: 40px;
+        margin-left: 13px;
+    }
+    .accordion-header{
+        font-size: small;
+        margin-top: 15.5px;
+    }
+    .accordion-body-link{
+        font-size: 12px;
+    }
+}
+.card-row{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+.card-header{
+    color: white;
+    border: none;
+    font-size: small;
+    opacity: 0.5;
+}
+.card-img-top{
+    width: 60%;
+    align-self: center;
+    border-radius: 0%;
+}
+#product-card{
+    background-color: #002e45c9;
+    margin-top: 40px;
+    width: 75%;
+    height: 91%;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px 0px #0000004f;
+}
+.card-head{
+    font-size: medium;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+.card-text{
+    font-size: small;
+    margin-bottom: 1%;
+}
+.btn-card{
+    background-color: #ffffff25;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+.btn-card:hover{
+    transform: scale(1.03);
+    background-color: #000629;
+}
+.p-price{
+    font-size: medium;
+    color: white;
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin-right: 3%;
+}
+.p-price-discount{
+    font-size: medium;
+    color: white;
+    opacity: 0.8;
+}
+footer{
+    margin-top: 100px;
+    background-color:#002e45;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .hr-thiker{
+    width: 250px;
+    height: 2px;
+    background-color:antiquewhite;
+    border:none;
+  }
+  .footer-logo-bar{
+    filter: invert(0.3);
+    width: 25px;
+    height: 25px;
+    margin-inline-end: 35px;
+    margin-left: 7px;
+  }
+  .footer-logo-bar:hover{
+    opacity: 0.7;
+    transform: scale(1.05);
+    filter: contrast(1);
+  }
+  .footer-link{
+    text-decoration: none;
+    color:white;
+  }
+  .end-text{
+    background-color: #002e45;
+    font-size: smaller;
+  }
+  .all-footer{
+    display: flex;
+    justify-content: center;
+  }

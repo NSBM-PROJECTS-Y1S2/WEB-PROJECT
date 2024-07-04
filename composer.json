@@ -1,0 +1,19 @@
+{
+    "name": "zerone/web-project",
+    "description": "Web Project for Y1S2",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Zerone\\WebProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ometh Abeyrathne",
+            "email": "ometha12@gmail.com"
+        }
+    ],
+    "require":{
+        "mongodb/mongodb": "^1.19"
+    }
+}

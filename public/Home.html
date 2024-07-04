@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="en" data-bss-forced-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MEDIX | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous"/>
+   <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
+  </head>
+  <body background="assets\Images\BG\BG image.svg">
+<!-- Nav Bar -->
+  <nav class="navbar shadow fixed-top navbar-expand-lg">
+    <div class="container-xxl">
+      <a class="navbar-brand" href="LandingPage.html">
+        <img src="assets\Images\NavBar\Medix logo.png" class="navbar-brand" alt="">
+      </a>
+      <button class="navbar-Toggler navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item dropdown" id="dropdown-categories">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              CATEGORIES
+            </a>
+            <ul class="dropdown-menu" id="categories-dropmenu">
+                <li><a class="dropdown-item" href="#">PRESCRIPTION ONLY MEDICINES</a></li>
+                <li><a class="dropdown-item" href="#">OVER THE COUNTER MEDICINES</a></li>
+                <li><a class="dropdown-item" href="#">VITAMINS & SUPPLEMENTS</a></li>
+                <li><a class="dropdown-item" href="#">BEAUTY & PERSONAL CARE</a></li>
+                <li><a class="dropdown-item" href="#">MOTHER & BABY CARE</a></li>
+                <li><a class="dropdown-item" href="#">ADULT CARE</a></li>
+                <li><a class="dropdown-item" href="#">MEDICAL DEVICES</a></li>
+                <li><a class="dropdown-item" href="#">DAILY NEEDS</a></li>
+                <li><a class="dropdown-item" href="#">PET CARE</a></li>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              PHARMACIES
+            </a>
+            <ul class="dropdown-menu">
+              <div class="d-flex">
+                <div class="d-grid pe-2">
+                  <li class="dropdown-header"><h6>WESTERN PROVIENCE</h6></li>
+                  <li><a class="dropdown-item" href="#">New Pharmacy, Kalutara</a></li>
+                  <li><a class="dropdown-item" href="#">Item 2</a></li>
+                  <li><a class="dropdown-item" href="#">Item 3</a></li>
+                  <li><a class="dropdown-item" href="#">Item 4</a></li>
+                  <li><a class="dropdown-item" href="#">Item 5</a></li>
+                </div>
+                <div class="d-grid ps-3">
+                  <li class="dropdown-header"><h6>OTHER PROVIENCES</h6></li>
+                  <li><a class="dropdown-item" href="#">Item 1</a></li>
+                  <li><a class="dropdown-item" href="#">Item 2</a></li>
+                  <li><a class="dropdown-item" href="#">Item 3</a></li>
+                  <li><a class="dropdown-item" href="#">Item 4</a></li>
+                  <li><a class="dropdown-item" href="#">Item 5</a></li>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="userLogin.html">CUSTOMER ACCOUNT</a></li>
+              <li><a class="dropdown-item" href="">SELLER ACCOUNT</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="cart" href="#">CART
+              <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
+              <span class="translate-middle badge" id="Badge">0</span>
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn search-icon" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!-- Main Content -->
+    <div class="row card-row">
+      <div class="col-xxl-2 col-xl-3 col-lg-3">
+        <div class="card card-main">
+          <div class="card-body">
+            <h5 class="card-title">CATEGORIES</h5>
+            <div class="accordion-item">
+                <a href="http://127.0.0.1:5500/LandingPage.html" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                  PRESCRIPTION ONLY MEDICINES
+                </a>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="d-grid">
+                    <a href="#" class="accordion-body-link">Item 1</a>
+                    <a href="#" class="accordion-body-link">Item 2</a>
+                    <a href="#" class="accordion-body-link">Item 3</a>
+                    <a href="#" class="accordion-body-link">Item 4</a>
+                    <a href="#" class="accordion-body-link">Item 5</a>
+                  </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsetwo" aria-expanded="true" aria-controls="flush-collapsetwo">
+                OVER THE COUNTER MEDICINES
+              </a>
+              <div id="flush-collapsetwo" class="accordion-collapse collapse" aria-labelledby="flush-headingtwo" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsethree" aria-expanded="true" aria-controls="flush-collapsethree">
+                VITAMINS & SUPPLEMENTS
+              </a>
+              <div id="flush-collapsethree" class="accordion-collapse collapse" aria-labelledby="flush-headingtwo" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="true" aria-controls="flush-collapsefour">
+                BEAUTY & PERSONAL CARE
+              </a>
+              <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="true" aria-controls="flush-collapsefive">
+                MOTHER & BABY CARE
+              </a>
+              <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="true" aria-controls="flush-collapsesix">
+                ADULT CARE
+              </a>
+              <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesevan" aria-expanded="true" aria-controls="flush-collapsesevan">
+                MEDICAL DEVICES
+              </a>
+              <div id="flush-collapsesevan" class="accordion-collapse collapse" aria-labelledby="flush-headingsevan" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseeight" aria-expanded="true" aria-controls="flush-collapseeight">
+                DAILY NEEDS
+              </a>
+              <div id="flush-collapseeight" class="accordion-collapse collapse" aria-labelledby="flush-headingeight" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsenine" aria-expanded="true" aria-controls="flush-collapsenine">
+                PET CARE
+              </a>
+              <div id="flush-collapsenine" class="accordion-collapse collapse" aria-labelledby="flush-headingnine" data-bs-parent="#accordionFlushExample">
+                <div class="d-grid">
+                  <a href="#" class="accordion-body-link">Item 1</a>
+                  <a href="#" class="accordion-body-link">Item 2</a>
+                  <a href="#" class="accordion-body-link">Item 3</a>
+                  <a href="#" class="accordion-body-link">Item 4</a>
+                  <a href="#" class="accordion-body-link">Item 5</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xxl-10 col-xl-9 col-lg-9 ">
+        <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+          <div class="carousel-inner custom-carousel">
+            <div class="carousel-item active">
+              <img src="assets\Images\Carousal Images\Carousel Image1.svg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\Images\Carousal Images\Carousel Image2.svg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets\Images\Carousal Images\Carousel Image3.svg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="row card-row">
+          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+            <div class="card" id="product-card">
+              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
+              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex">
+                  <p class="p-price">2000.00LKR</p>
+                  <p class="p-price-discount">1900.00LKR</p>
+                </div>
+                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+            <div class="card" id="product-card">
+              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
+              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex">
+                  <p class="p-price">2000.00LKR</p>
+                  <p class="p-price-discount">1900.00LKR</p>
+                </div>
+                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+            <div class="card" id="product-card">
+              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
+              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex">
+                  <p class="p-price">2000.00LKR</p>
+                  <p class="p-price-discount">1900.00LKR</p>
+                </div>
+                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+            <div class="card" id="product-card">
+              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
+              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex">
+                  <p class="p-price">2000.00LKR</p>
+                  <p class="p-price-discount">1900.00LKR</p>
+                </div>
+                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
+                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container-xxl">
+      <div class="row card-row">
+        <div class="col-lg-4 col-md-5 col-sm-6">
+          <img src="assets\Images\Carousal Images\Medix logo.png" alt="main-logo" class="ms-5" width="150px"><br>
+          <small>Your Ultimate Health-Care Destination!</small>
+          <hr class="hr-thiker">
+          <div class="d-flex">
+            <a href="#"><img src="assets\Images\Footer Logo Bar\Fb logo.png" alt="fb-logo" class="footer-logo-bar"></a>
+            <a href="#"><img src="assets\Images\Footer Logo Bar\Inster logo.png" alt="inster-logo" class="footer-logo-bar"></a>
+            <a href="#"><img src="assets\Images\Footer Logo Bar\linkedIn logo.png" alt="linkedIn-logo" class="footer-logo-bar"></a>
+            <a href="#"><img src="assets\Images\Footer Logo Bar\Twitter logo.png" alt="Twitter-logo" class="footer-logo-bar"></a>
+          </div>
+          <br>
+          <div class="d-grid">
+            <h6>Visit Us : </h6>
+            <small>No 131/03, Pitipana-Thalagala Road,<br>Homagama. </small>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-7 col-sm-6">
+          <div class="d-flex ">
+            <div class="col-6">
+              <div class="d-grid me-2">
+                <h6>Info & Our Service</h6>
+                <a href="#" class="footer-link"><small>Seller Center</small></a>
+                <a href="helpcenter.html" class="footer-link"><small>Help Center</small></a>
+                <a href="#" class="footer-link"><small>About Us</small></a>
+                <a href="#" class="footer-link"><small>Contact Us</small></a>
+                <a href="privacypolicy.html" class="footer-link"><small>Privicy & Policy</small></a>
+                <a href="#" class="footer-link"><small>Terms & Conditions</small></a>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-grid">
+                <h6>Product Overview</h6>
+                <a href="#" class="footer-link"><small>Critical Health Care</small></a>
+                <a href="#" class="footer-link"><small>Beauty Care</small></a>
+                <a href="#" class="footer-link"><small>Personal Care</small></a>
+                <a href="#" class="footer-link"><small>Daily Needs</small></a>
+                <a href="#" class="footer-link"><small>Mother & Baby Care</small></a>
+                <a href="#" class="footer-link"><small>Physical Fitness</small></a>
+              </div>
+            </div>
+
+          </div>
+          <div class="d-flex">
+            <br>
+            <img src="assets\Images\Footer Logo Bar\219_visa.png" width="60px" class="me-3" alt="visacard-logo">
+            <img src="assets\Images\Footer Logo Bar\Mastercard-logo.png" width="40px" height="40px" class="mt-2" alt="mastercard-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="d-flex justify-content-center end-text">
+    <small><p><sup>&copy;</sup>2024 MEDIX. All Rights Reserved.</p></small>
+  </div>
+  
+<script>
+  function cartCount(){
+    var cart = document.getElementById("Badge");
+    let count = parseInt(cart.innerHTML);
+    count++;
+    cart.innerHTML = count;
+  }
+  const addCart = document.querySelectorAll("#addCart");
+  addCart.forEach((btn) => {
+    btn.addEventListener("click", cartCount);
+  });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>

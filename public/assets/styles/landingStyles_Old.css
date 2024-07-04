@@ -1,0 +1,163 @@
+.image-container {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    filter: blur(5px);
+}
+.slogen-overlay{
+  position: absolute;
+  top: 73%;
+  left: 15%;
+  transform: middle;
+  display:flexbox ;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.text-overlay{
+  position: absolute;
+  top: 77%;
+  left: 15%;
+  transform: middle;
+  display:flexbox ;
+  color: white;
+  font-weight:lighter;
+  font-size: medium;
+}
+.button-overlay {
+    position: absolute;
+    top: 83%;
+    left: 15%;
+    transform: middle;
+    display:flexbox ;
+    padding: 10px 20px;
+    background-color:#002e45;
+    color: white;
+    border: none;
+}
+.button-overlay:hover{
+  background-color: #000629;
+  transform: scale(1.03);
+}
+
+.logo-overlay {
+  display: flexbox;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: middle;
+  background-color: #002e458c ;
+  width: 1000px;
+}
+
+@media(max-width:990px){
+  .button-overlay{
+    padding: 8px 16px;
+    font-size: small;
+  }
+  .slogen-overlay{
+    font-size: medium;
+    position: absolute;
+    top: 68%;
+    left: 15%;
+    transform: middle;
+    display:flexbox ;
+  }
+  .text-overlay{
+    font-size: small;
+    position: absolute;
+    top: 73%;
+    left: 15%;
+    transform: middle;
+    display:flexbox ;
+  }
+}
+@media(max-width:780px){
+  .button-overlay{
+    padding: 5px 10px;
+    font-size: x-small;
+  }
+  .slogen-overlay{
+    font-size:small;
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    transform: middle;
+    display:flexbox ;
+  }
+  .text-overlay{
+    font-size: x-small;
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    transform: middle;
+    display:flexbox ;
+  }
+}
+.btn-card{
+  background-color: #002e45;
+}
+.btn-card:hover{
+  transform: scale(1.03);
+  background-color: #000629;
+}
+.card {
+    border-color: aliceblue;
+    border-radius:0%;
+    margin-top: 20px;
+    width: 250px;
+    font-size: small;
+}
+footer{
+  margin-top: 100px;
+  background-color:#002e45;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  background-color: #002e458c ;
+  color: black;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.5s;
+}
+
+.navbar:hover{
+  background-color: #002e45;
+  color : white;
+}
+
+.hr-thiker{
+  width: 250px;
+  height: 2px;
+  background-color:antiquewhite;
+  border:none;
+}
+.footer-logo-bar{
+  width: 25px;
+  height: 25px;
+  margin-inline-end: 35px;
+  margin-left: 7px;
+}
+.footer-logo-bar:hover{
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+.footer-link{
+  text-decoration: none;
+  color:white;
+}
+
+.end-text{
+  background-color: #002e45;
+  font-size: smaller;
+}
+.all-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.set-width {
+  height:50%;
+}
