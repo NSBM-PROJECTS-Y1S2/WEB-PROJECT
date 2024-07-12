@@ -188,29 +188,29 @@
 
               function fetchData() {
               // Check if URL contains ?status=buyaddcart
-                if (window.location.search.includes('status=buyaddcart')) {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', 'assets/js/src/otherCartScript.php', true);
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
-                            var data = JSON.parse(xhr.responseText);
-                            if (data.error) {
-                                console.log(data.error);
-                            } else {
-                              document.getElementById('itemName').innerText = "All Cart Items";
-                              document.getElementById('setImage').src = "https://icons.iconarchive.com/icons/bootstrap/bootstrap/256/Bootstrap-cart-icon.png";
-                              document.getElementById('itmQty').innerText = data.count;
-                              document.getElementById('totAmount').innerText = 'Rs.' + data.totalAmount + '.00';
-                              //Hide other elements
-                              document.getElementById('amount').style.display = 'none';
-                              document.getElementById('shipFee').style.display = 'none';
-                              document.getElementById('shippingTopic').style.display = 'none';
-                              document.getElementById('priceTopic').style.display = 'none';
-                            }
-                          }
-                    };
-                    xhr.send();
-                } else {
+              if (window.location.search.includes('status=buyaddcart')) {
+                $.ajax({
+                    url: 'assets/js/src/otherCartScript.php',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.error) {
+                            console.log(data.error);
+                        } else {
+                            document.getElementById('itemName').innerText = "All Cart Items";
+                            document.getElementById('setImage').src = "https://icons.iconarchive.com/icons/bootstrap/bootstrap/256/Bootstrap-cart-icon.png";
+                            document.getElementById('itmQty').innerText = data.count;
+                            // alert(data.count);
+                            document.getElementById('totAmount').innerText = 'Rs.' + data.totalAmount + '.00';
+                            // Hide other elements
+                            document.getElementById('amount').style.display = 'none';
+                            document.getElementById('shipFee').style.display = 'none';
+                            document.getElementById('shippingTopic').style.display = 'none';
+                            document.getElementById('priceTopic').style.display = 'none';
+                        }
+                    }
+                });
+              } else {
                     var xhr = new XMLHttpRequest();
                     xhr.open('GET', 'assets/js/src/buyNowFetch.php', true);
                     xhr.onreadystatechange = function () {

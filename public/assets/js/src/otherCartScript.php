@@ -1,19 +1,19 @@
 <?php
+session_start(); // Start the session to access $_SESSION
 require '../../../../vendor/autoload.php';
 
 use MongoDB\Client;
 
-session_start(); // Start the session to access $_SESSION
 
 $client = new Client("mongodb://localhost:27017");
 $collection = $client->MEDIX->cartItems;
 $medicationsCollection = $client->MEDIX->Medications;
 
-$userId = $_SESSION['UserID']; // Retrieve UserID from session
+$userId = $_SESSION['_id'];
 
 $query = [
     'orderStatus' => 'add-cart',
-    'UserID' => $userId // Add UserID to the query
+    'userID' => $userId
 ];
 
 $cursor = $collection->find($query);
@@ -25,14 +25,7 @@ foreach ($cursor as $document) {
     $count++;
     $medicationId = new MongoDB\BSON\ObjectId($document->itemId);
     $medication = $medicationsCollection->findOne(['_id' => $medicationId]);
-    
-    // Calculate the total amount from the price section of cartItems
     $totalAmount += $document->price;
-
-    // You can include additional logic here if needed for medication details
-    // if ($medication) {
-    //     // Additional logic if required
-    // }
 }
 
 $result = [

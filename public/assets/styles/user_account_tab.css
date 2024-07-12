@@ -99,6 +99,17 @@ body{
 .profileImageContainer{
   margin-left: 10%;
 }
+#prescription{
+  background-color: #002e45;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px;
+  margin-left: 30%;
+}
+#prescription:hover{
+  background-color: #000629;
+  color: white;
+}
 #gotoOrders{
   background-color: #002e45;
   padding-left: 40px;

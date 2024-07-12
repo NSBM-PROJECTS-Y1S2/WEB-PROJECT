@@ -1,0 +1,135 @@
+:root {
+  --spacing-lg: 20px;
+  --spacing-md: 15px;
+  --spacing-sm: 10px;
+  --primary-color: #337ab7;
+  --primary-color-hover: #23527c;
+  --secondary-color: #37b733;
+  --text-color: #666;
+  --border-color: #ddd;
+  --background-color: rgba(247, 247, 247, 0.76);
+/* Remove the closing curly brace */
+
+/* Container and Form Alignment */
+.container {
+  margin-top: 8%;
+}
+
+.upload-form {
+  padding: 30px;
+  background-color:#002e45;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload Box Styling */
+.upload-box {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  border: 1px;
+  border-radius: 10px;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  margin: 0 auto;
+  background-color: #23527c;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-sm);
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upload-box label span {
+  font-size: 16px;
+  color: white;
+}
+
+.upload-box label i {
+  font-size: 24px;
+  color: white;
+}
+
+/* Dropzone Styles */
+.dropzone {
+  border: 2px;
+  border-radius: 10px;
+  padding: var(--spacing-lg);
+  text-align: center;
+  cursor: pointer;
+  background-color: #0000009f;
+}
+
+.dropzone-icon {
+  width: 50px;
+  height: 50px;
+  margin: var(--spacing-md) auto;
+}
+
+/* General Form Styles */
+.the-message {
+  margin-top: var(--spacing-md);
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.radio-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.submit {
+  background-color: #000629b0;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
+.submit:hover {
+  background-color: #000629 ;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: var(--spacing-sm);
+  }
+  
+  .upload-form {
+    padding: var(--spacing-sm);
+  }
+  
+  .upload-box {
+    width: 100%;
+  }
+  
+  .upload-box label {
+    font-size: 14px;
+  }
+  
+  .dropzone {
+    padding: var(--spacing-sm);
+  }
+  
+  .the-message {
+    font-size: 14px;
+  }
+}
+}

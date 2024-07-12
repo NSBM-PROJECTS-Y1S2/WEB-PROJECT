@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="en" data-bss-forced-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIX Upload Prescription</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="assets\styles\prescriptionUpload.css" type="text/css">
+    <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
+</head>
+<body background="assets\Images\BG\BG image.svg">
+    <nav class="navbar shadow fixed-top navbar-expand-lg">
+        <div class="container-xxl">
+          <a class="navbar-brand" href="LandingPage.html">
+            <img src="assets\Images\NavBar\Medix logo.png" class="navbar-brand" alt="">
+          </a>
+          <button class="navbar-Toggler navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Home.html">HOME</a>
+              </li>
+              <li class="nav-item dropdown" id="dropdown-categories">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  CATEGORIES
+                </a>
+                <ul class="dropdown-menu" id="categories-dropmenu">
+                    <li><a class="dropdown-item" href="#">PRESCRIPTION ONLY MEDICINES</a></li>
+                    <li><a class="dropdown-item" href="#">OVER THE COUNTER MEDICINES</a></li>
+                    <li><a class="dropdown-item" href="#">VITAMINS & SUPPLEMENTS</a></li>
+                    <li><a class="dropdown-item" href="#">BEAUTY & PERSONAL CARE</a></li>
+                    <li><a class="dropdown-item" href="#">MOTHER & BABY CARE</a></li>
+                    <li><a class="dropdown-item" href="#">ADULT CARE</a></li>
+                    <li><a class="dropdown-item" href="#">MEDICAL DEVICES</a></li>
+                    <li><a class="dropdown-item" href="#">DAILY NEEDS</a></li>
+                    <li><a class="dropdown-item" href="#">PET CARE</a></li>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  PHARMACIES
+                </a>
+                <ul class="dropdown-menu">
+                  <div class="d-flex">
+                    <div class="d-grid pe-2">
+                      <li class="dropdown-header"><h6>WESTERN PROVIENCE</h6></li>
+                      <li><a class="dropdown-item" href="#">New Pharmacy, Kalutara</a></li>
+                      <li><a class="dropdown-item" href="#">Item 2</a></li>
+                      <li><a class="dropdown-item" href="#">Item 3</a></li>
+                      <li><a class="dropdown-item" href="#">Item 4</a></li>
+                      <li><a class="dropdown-item" href="#">Item 5</a></li>
+                    </div>
+                    <div class="d-grid ps-3">
+                      <li class="dropdown-header"><h6>OTHER PROVIENCES</h6></li>
+                      <li><a class="dropdown-item" href="#">Item 1</a></li>
+                      <li><a class="dropdown-item" href="#">Item 2</a></li>
+                      <li><a class="dropdown-item" href="#">Item 3</a></li>
+                      <li><a class="dropdown-item" href="#">Item 4</a></li>
+                      <li><a class="dropdown-item" href="#">Item 5</a></li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="userLogin.html" id="UserAcc">CUSTOMER ACCOUNT</a></li>
+                  <li><a class="dropdown-item" href="pharmacyLogin.html" id="pharmaAcc">SELLER ACCOUNT</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="cart" href="UserCart.html">CART
+                  <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
+                  <span class="translate-middle badge" id="Badge">0</span>
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn search-icon" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container-xxl">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 upload-form">
+                        <div class="member-div row"></div>
+                        <div class="uploader-form">
+                            <form id="dropzone" class="dropzone presc-dropzone dz-clickable" action="/ajax_file_upload_handler/" enctype="multipart/form-data" method="post">
+                                <div class="dz-message" data-dz-message="">
+                                    <input type="file" id="fileInput" style="display: none;" />
+                                    <img class="dropzone-icon" src="assets\Images\doc-upload.jpg" width="50px" alt="Upload Icon">
+                                    <h4>Drag & Drop Files Here</h4>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="the-message">
+                            <p>Please upload clear images of the whole prescription.</p>
+                        </div>
+                        <form class="the-form row" method="POST" action="/submit_prescription.php">
+                            <input type="hidden" name="action" value="submit_prescription">
+                            <input type="hidden" name="attachments" value="">
+                            
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="name" class="required">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your Name" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="age" class="required">Age</label>
+                                    <input type="number" id="age" name="age" placeholder="Age" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="duration" class="required">Duration</label>
+                                    <select id="duration" class="form-control" name="duration" required>
+                                        <option value="" disabled selected>Please select</option>
+                                        <option value="1_week">1 Week</option>
+                                        <option value="2_weeks">2 Weeks</option>
+                                        <option value="3_weeks">3 Weeks</option>
+                                        <option value="1_month">1 Month</option>
+                                        <option value="2_months">2 Months</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="required">Gender</label><br>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" value="M" required> Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" value="F"> Female
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="phone" class="required">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="required">Medicine allergies?</label><br>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="allergies" value="Y" required> Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="allergies" value="N"> No
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="required">Frequency</label><br>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="frequency" value="on_time" required> One Time
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="frequency" value="on_going"> On Going
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 mb-10">
+                                <input type="text" class="form-control" placeholder="Describe allergies" name="allergies_notes">
+                            </div>
+                            
+                            <div class="col-lg-12 mb-10">
+                                <div class="form-group">
+                                    <label for="notes">Special Notes</label>
+                                    <textarea id="notes" rows="4" class="form-control" placeholder="Additional Notes" name="notes"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="pointer">
+                                        <input type="checkbox" name="obligation" value="checked" required> I have no obligation for getting my medicines delivered by MEDIX team on behalf of me.
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <button class="btn btn-primary btn-block submit" type="submit">Submit</button>
+                            </div>
+                        </form>
+                        <div class="col-lg-12 mb-10">
+                            <div class="alert alert-info">
+                                <h5>Important Notes:</h5>
+                                <ol>
+                                    <li>You can upload up to 5 photos.</li>
+                                    <li>Please upload a full, clear photo of your prescription.</li>
+                                    <li>If you have specific instructions or specific/preferable brands, please mention in the ‘Notes’ section.</li>
+                                    <li>Please double check your mobile phone number before submitting the prescription. One of our pharmacists will contact you to confirm your order.</li>
+                                    <li>Your prescription must be a valid prescription from a registered medical practitioner.</li>
+                                </ol>
+                                <h5>වැදගත් සටහන්:</h5>
+                                <ol>
+                                    <li>ඔබට ඖෂධ වට්ටෝරු 5 ක් දක්වා ඇතුළත් කළ හැකිය.</li>
+                                    <li>කරුණාකර ඔබේ බෙහෙත් වට්ටෝරුවේ සම්පූර්ණ පැහැදිලි ඡායාරූපයක් ඇතුළත් කරන්න.</li>
+                                    <li>විශේෂිත වෙළඳ නාම තිබේ නම් කරුණාකර ‘සටහන්’ (Notes) කොටසෙහි පැහැදිලිව සඳහන් කරන්න.</li>
+                                    <li>කරුණාකර බෙහෙත් වට්ටෝරුව ඉදිරිපත් කිරීමට පෙර ඔබගේ ජංගම දුරකථන අංකය දෙවරක් පරීක්ෂා කරන්න.</li>
+                                    <li>ඔබගේ ඇණවුම තහවුරු කිරීම සඳහා අපගේ ඖෂධවේදියෙකු ඔබ හා සම්බන්ධ වනු ඇත.</li>
+                                    <li>ඔබේ බෙහෙත් වට්ටෝරුව ලියාපදිංචි වෛද්‍යවරයෙකුගේ වලංගු බෙහෙත් වට්ටෝරුවක් විය යුතුය.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container-xxl">
+          <div class="row card-row">
+            <div class="col-lg-4 col-md-5 col-sm-6">
+              <img src="assets\Images\Carousal Images\Medix logo.png" alt="main-logo" class="ms-5" width="150px"><br>
+              <small>Your Ultimate Health-Care Destination!</small>
+              <hr class="hr-thiker">
+              <div class="d-flex">
+                <a href="#"><img src="assets\Images\Footer Logo Bar\Fb logo.png" alt="fb-logo" class="footer-logo-bar"></a>
+                <a href="#"><img src="assets\Images\Footer Logo Bar\Inster logo.png" alt="inster-logo" class="footer-logo-bar"></a>
+                <a href="#"><img src="assets\Images\Footer Logo Bar\linkedIn logo.png" alt="linkedIn-logo" class="footer-logo-bar"></a>
+                <a href="#"><img src="assets\Images\Footer Logo Bar\Twitter logo.png" alt="Twitter-logo" class="footer-logo-bar"></a>
+              </div>
+              <br>
+              <div class="d-grid">
+                <h6>Visit Us : </h6>
+                <small>No 131/03, Pitipana-Thalagala Road,<br>Homagama. </small>
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-7 col-sm-6">
+              <div class="d-flex ">
+                <div class="col-6">
+                  <div class="d-grid me-2">
+                    <h6>Info & Our Service</h6>
+                    <a href="#" class="footer-link"><small>Seller Center</small></a>
+                    <a href="helpcenter.html" class="footer-link"><small>Help Center</small></a>
+                    <a href="#" class="footer-link"><small>About Us</small></a>
+                    <a href="#" class="footer-link"><small>Contact Us</small></a>
+                    <a href="privacypolicy.html" class="footer-link"><small>Privicy & Policy</small></a>
+                    <a href="#" class="footer-link"><small>Terms & Conditions</small></a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-grid">
+                    <h6>Product Overview</h6>
+                    <a href="#" class="footer-link"><small>Critical Health Care</small></a>
+                    <a href="#" class="footer-link"><small>Beauty Care</small></a>
+                    <a href="#" class="footer-link"><small>Personal Care</small></a>
+                    <a href="#" class="footer-link"><small>Daily Needs</small></a>
+                    <a href="#" class="footer-link"><small>Mother & Baby Care</small></a>
+                    <a href="#" class="footer-link"><small>Physical Fitness</small></a>
+                  </div>
+                </div>
+    
+              </div>
+              <div class="d-flex">
+                <br>
+                <img src="assets\Images\Footer Logo Bar\219_visa.png" width="60px" class="me-3" alt="visacard-logo">
+                <img src="assets\Images\Footer Logo Bar\Mastercard-logo.png" width="40px" height="40px" class="mt-2" alt="mastercard-logo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="d-flex justify-content-center end-text">
+        <small><p><sup>&copy;</sup>2024 MEDIX. All Rights Reserved.</p></small>
+      </div>
+    <script src="assets\js\prescriptionUpload.js"></script>
+</body>
+</html>

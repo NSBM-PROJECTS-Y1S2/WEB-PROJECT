@@ -59,7 +59,7 @@ function displayCartItems(items) {
                                 <h5 class="card-title">${medication.brandName}</h5>
                                 <p class="card-text">${medication.details}</p>
                                 <p class="card-text">Price: Rs. ${item.price}</p>
-                                <p class="card-text">Quantity: 1</p>
+                                <p class="card-text" id="qty">Quantity: 1</p>
                                 <button class="btn btn-sm btn-primary" id="addBtn">Add Item</button>
                                 <button class="btn btn-sm btn-danger" id="removeBtn">Remove</button>
                             </div>
@@ -80,7 +80,7 @@ document.getElementById('cartData').addEventListener('click', function(event) {
     if (event.target.id === 'addBtn') {
         var medicationId = event.target.parentElement.parentElement.parentElement.parentElement.id;
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'assets/js/src/add_to_cart.php', true);
+        xhr.open('POST', 'assets/js/src/addToCart.php', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status == 200) {
