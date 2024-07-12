@@ -1,10 +1,10 @@
 
 var inhibitor = 0;
 
-$.ajax({
-    type: "GET",
-    url: "assets/js/src/paymentProcess.php",
-});
+// $.ajax({
+//     type: "GET",
+//     url: "assets/js/src/paymentProcess.php",
+// });
 
 function paymentCalculation(){
     var qty = document.getElementById("itmQty").value;
@@ -15,20 +15,20 @@ function paymentCalculation(){
 }
 
 function uploadDataToMongo() {
-    let ItemName = document.getElementById("retriveName").value;
+    let ItemName = document.getElementById("retrieveItemID").value;
     let cardNumber = document.getElementById("cardNumber").value;
     let cardHolder = document.getElementById("cardHolder").value;
     let expirationDate = document.getElementById("expDT").value;
     let securityCode = document.getElementById("cvv").value;
-    let zipCode = document.getElementById("zipCode").value;
+    let zipCode = document.getElementById("zipcode").value;
     let city = document.getElementById("city").value;
     let state = document.getElementById("state").value;
-    let address = document.getElementById("address").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    var price = document.getElementById("itmPrice").value;
-    var amount = document.getElementById("totAmount").value;
-    let UserID = document.getElementById("retriveUserID").value;
+    let address = document.getElementById("state").value;
+    // let email = document.getElementById("email").value;
+    let phone = document.getElementById("phoneNumber").value;
+    var price = document.getElementById("totAmount").innerText;
+    var amount = document.getElementById("itmQty").innerText;
+    let UserID = document.getElementById("setUserStat").value;
     let Method;
     let Status;
     
@@ -56,9 +56,9 @@ function uploadDataToMongo() {
             securityCode: securityCode,
             zipCode: zipCode,
             city: city,
-            state: state,
+            state: city,
             address: address,
-            email: email,
+            // email: email,
             phone: phone,
             Price: price,
             Amount: amount,
@@ -68,6 +68,7 @@ function uploadDataToMongo() {
         success: function(response) {
             console.log("Payment Succeeded: " + response);
             alert("Payment Accepted !, Thank you for using our services...");
+            window.location.href = "Home.html";
             // clearCart();
             // window.location.href = 'index.html'; // Redirect user after successful payment
         },
@@ -76,8 +77,7 @@ function uploadDataToMongo() {
             alert("Fatal Error! Please try again later.");
         }
     });
-    
-
+    clearAllCartItems();
     // alert("Ajax End Reached");
 }
 

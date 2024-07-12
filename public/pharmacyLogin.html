@@ -9,7 +9,8 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <!-- <script src="assets/js/onloadCheckUserStatus.js"></script> -->
+    <script src="assets\js\pharmacyLogin.js"></script>
     <link rel="stylesheet" href="assets\styles\userLogin.css" type="text/css">
 </head>
 <body background="assets\Images\BG\BG image2.svg">
@@ -23,22 +24,21 @@
                 <hr>
                 <form>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" autocomplete="username" placeholder="Enter email or username " required>
+                        <!--<label for="pharmaEmail">Email</label>-->
+                        <input type="email" id="pharmaEmail" class="form-control" placeholder="Enter email or username" autocomplete="username" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" class="form-control" autocomplete="current-password" placeholder="Enter Password" required>
+                        <!--<label for="pharmaPassword">Password</label>-->
+                        <input type="password" id="pharmaPassword" class="form-control" placeholder="Enter Password" autocomplete="current-password" required>
                     </div>
-                    <a href="#" type="submit" class="btn" onclick="CheckForLoginStat()">Login</a>
+                    <a href="#" type="submit" class="btn" onclick="CheckLoginStat()">Login</a>
                     <div>
                         <a href="#" class="forgot mt-2" id="pass-forgot">Forgot Password?</a>
-                        <p id="newacc">Don't have an account? <a href="userSignup.html" class="newlink">Create an Account</a></p>
+                        <p id="newacc">Don't have an account? <a href="pharmacySignUp.html" class="newlink">Create an Account</a></p>
                     </div>
                 </form>
             </div>
         </div>
-<script src="assets\js\userLoginScript.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
 integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"    
 crossorigin="anonymous"></script>

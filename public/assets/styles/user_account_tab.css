@@ -96,16 +96,30 @@ body{
   object-fit: cover; /* Ensures the image covers the entire area */
   border: 2px solid #ccc; /* Optional: add a border for visual clarity */
 }
-#savebtn{
-  display: block;
-  background-color: #00062977;
+.profileImageContainer{
+  margin-left: 10%;
+}
+#gotoOrders{
+  background-color: #002e45;
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 20px;
-  margin-left: 30%;
+  margin-left: 23%;
 }
-#savebtn:hover{
+#gotoOrders:hover{
   background-color: #000629;
+  color: white;
+}
+
+#gotoOrders2{
+  background-color: #450000;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  margin-left: 10%;
+}
+#gotoOrders2:hover{
+  background-color: #290000;
   color: white;
 }
 .details{

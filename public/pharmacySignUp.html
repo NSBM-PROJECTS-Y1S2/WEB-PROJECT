@@ -13,36 +13,52 @@
 </head>
 <body background="assets\Images\BG\BG image2.svg">
         <div class="row">
-            <div class="col-xxl-3 col-lg-6 col-md-7 col-sm-8 col-9 shadow" id="signupCard">
+            <div class="col-xxl-4 col-lg-6 col-md-7 col-sm-8 col-9 shadow" id="signupCard">
                 <div class="header d-grid">
                     <img src="assets\Images\NavBar\Medix logo.png" class="logo" alt="">
                 </div>
                 <p class="slogen">Your Ultimate Health-Care Destination!</p>
                 <p class="topTxt">Get Start Your Journey With Us</p>
                 <form class="mt-4" id="signupForm">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" placeholder="First Name" id="Fname" required>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="pharmacyName">Business Name</label>
+                                <input type="text" class="form-control" placeholder="Pharmacy Name" id="pharmacyName" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="ownName">Owner Name</label>
+                                <input type="text" class="form-control" placeholder="Owner Name" id="ownName" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" id="Lname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="pharmaPhone">Official Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Official Phone Number" id="pharmaPhone" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="ownPhone">Owner Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Owner Phone Number" id="ownPhone" required>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="Addr">Address address</label>
-                        <input type="Addr" class="form-control" placeholder="Enter Your Address" id="Addr" required>
+                        <input type="Addr" class="form-control" placeholder="Pharmacy Address" id="pharmaAddress" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" id="email" required>
+                        <input type="email" class="form-control" placeholder="Email" id="pharmaEmail" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Passsword" required>
+                        <input type="password" class="form-control" id="pharmaPassword" placeholder="Passsword" required>
                         <div id="passwordError" class="form-text"></div>
                     </div>
                     <div class="form-group">
@@ -51,7 +67,7 @@
                         <div id="confirmPasswordError" class="form-text"></div>
                     </div>
                     <div>
-                        <button id="signupBtn" class="btn" onclick="saveDataToMongo()">Signup</button>
+                        <button type="submit" id="signupBtn" class="btn">Signup</button>
                         <p id="oldAcc">Already have an account? <a href="userLogin.html" class="oldLink">Login</a></p>
                     </div>
                 </form>
@@ -59,7 +75,7 @@
             </div>
 
         </div>
-<script src="assets\js\userSignupScript.js"></script>
+<script src="assets\js\pharmacySignup.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
 integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"    
 crossorigin="anonymous"></script>

@@ -1,0 +1,69 @@
+.container{
+    margin-top: 8%;
+    background-color: #002e45;
+    padding:2%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+}
+#mainHead{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+
+}
+.card{
+    margin-top: 5%;
+    background-color: #000629a1;
+    border: none;
+}
+#cardText{
+    color: white;
+    font-size: 16px;
+
+}
+#addBtn{
+    background-color: #002e45;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+#addBtn:hover{
+    background-color: #09081a;
+}
+#removeBtn{
+    background-color: rgb(112, 0, 0);
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 2%;
+}
+#removeBtn:hover{
+    background-color: rgb(49, 0, 0);
+}
+
+
+#checkoutBtn {
+    background-color: #000629a1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 250px;
+    margin-left:40%;
+}
+
+.checkout-btn:hover {
+    background-color: #09081a;
+}

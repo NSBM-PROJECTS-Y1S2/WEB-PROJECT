@@ -5,29 +5,29 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// $currentDateTime = date('Y-m-d H:i:s');
+$currentDateTime = date('Y-m-d H:i:s');
 
 require '../../../../vendor/autoload.php';
-
+session_start();
 $mongoUri = "mongodb://localhost:27017";
 $dbName = "MEDIX";
-$collectionName = "users";
+$collectionName = "cartItems";
 
 try {
     $mongoClient = new MongoDB\Client($mongoUri);
     $db = $mongoClient->$dbName;
     $collection = $db->$collectionName;
 
+
     $document = array(
-        'UserFirstName' => $_POST['FName'],
-        'UserLastName' => $_POST['LName'],
-        'UserPhoneNo' => $_POST['PhoneNo'],
-        'UserEmail' => $_POST['Email'],
-        'UserPassword' => $_POST['Password']
+        'productID' => $_POST['productID'],
+        'productName' => $_POST['productName'],
+        'userID' => $_POST['userID'],
+        'buyOrCart' => $_POST['orderStat']
     );
 
     $collection->insertOne($document);
-    echo "Registration Successful.";
+    echo "Payment successfully processed.";
 } catch (MongoDB\Driver\Exception\Exception $e) {
     echo "Error: " . $e->getMessage();
 }

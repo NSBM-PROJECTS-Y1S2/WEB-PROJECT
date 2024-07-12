@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('HTTP/1.1 405 Method Not Allowed');
     echo "Method Not Allowed";
@@ -26,10 +27,10 @@ try {
         'expirationDate' => $_POST['expirationDate'],
         'cvv' => $_POST['securityCode'],
         'zipCode' => $_POST['zipCode'],
-        'city' => $_POST['city'],
+        // 'city' => $_POST['city'],
         'state' => $_POST['state'],
         'address' => $_POST['address'],
-        'email' => $_POST['email'],
+        'email' => isset($_SESSION['UserEmail']) ? $_SESSION['UserEmail'] : '',
         'phone' => $_POST['phone'],
         'Price' => $_POST['Price'],
         'Amount' => $_POST['Amount'],

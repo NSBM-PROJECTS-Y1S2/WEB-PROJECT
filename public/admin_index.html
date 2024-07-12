@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="en" data-bss-forced-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIX | Seller Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="assets\styles\style_admin_dash.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets\js\onloadCheckUserStatus.js"></script>
+</head>
+<body>
+<nav class="navbar shadow fixed-top navbar-expand-lg">
+    <div class="container-xxl">
+        <a class="navbar-brand" href="LandingPage.html">
+        <img src="assets\Images\NavBar\Medix logo.png" class="navbar-brand" alt="">
+        </a>
+        <button class="navbar-Toggler navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Home.html">HOME</a>
+            </li>
+            <li class="nav-item dropdown" id="dropdown-categories">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                CATEGORIES
+            </a>
+            <ul class="dropdown-menu" id="categories-dropmenu">
+                <li><a class="dropdown-item" href="#">PRESCRIPTION ONLY MEDICINES</a></li>
+                <li><a class="dropdown-item" href="#">OVER THE COUNTER MEDICINES</a></li>
+                <li><a class="dropdown-item" href="#">VITAMINS & SUPPLEMENTS</a></li>
+                <li><a class="dropdown-item" href="#">BEAUTY & PERSONAL CARE</a></li>
+                <li><a class="dropdown-item" href="#">MOTHER & BABY CARE</a></li>
+                <li><a class="dropdown-item" href="#">ADULT CARE</a></li>
+                <li><a class="dropdown-item" href="#">MEDICAL DEVICES</a></li>
+                <li><a class="dropdown-item" href="#">DAILY NEEDS</a></li>
+                <li><a class="dropdown-item" href="#">PET CARE</a></li>
+                </li>
+            </ul>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                PHARMACIES
+            </a>
+            <ul class="dropdown-menu">
+                <div class="d-flex">
+                <div class="d-grid pe-2">
+                    <li class="dropdown-header"><h6>WESTERN PROVIENCE</h6></li>
+                    <li><a class="dropdown-item" href="#">New Pharmacy, Kalutara</a></li>
+                    <li><a class="dropdown-item" href="#">Item 2</a></li>
+                    <li><a class="dropdown-item" href="#">Item 3</a></li>
+                    <li><a class="dropdown-item" href="#">Item 4</a></li>
+                    <li><a class="dropdown-item" href="#">Item 5</a></li>
+                </div>
+                <div class="d-grid ps-3">
+                    <li class="dropdown-header"><h6>OTHER PROVIENCES</h6></li>
+                    <li><a class="dropdown-item" href="#">Item 1</a></li>
+                    <li><a class="dropdown-item" href="#">Item 2</a></li>
+                    <li><a class="dropdown-item" href="#">Item 3</a></li>
+                    <li><a class="dropdown-item" href="#">Item 4</a></li>
+                    <li><a class="dropdown-item" href="#">Item 5</a></li>
+                </div>
+                </div>
+            </ul>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="userLogin.html" id="UserAcc">CUSTOMER ACCOUNT</a></li>
+                <li><a class="dropdown-item" href="pharmacyLogin.html" id="pharmaAcc">SELLER ACCOUNT</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" id="cart" href="user_orders.html">CART
+                <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
+                <span class="translate-middle badge" id="Badge">0</span>
+            </a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn search-icon" type="submit">Search</button>
+        </form>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <aside>
+                <div class="top">
+                    <div class="logo">
+                    <p class="sidebarHead"><span class="" id="SellerName">Pharmacy Name</span></p>
+                    </div>
+                    <div class="close">
+                        <span class="material-symbols-outlined">close</span>                    
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <a href="admin_index.html" class="active" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> person_outline  </span>
+                        <h5>Customer</h5>
+                    </a>
+                    <a href="analytics.html" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> insights  </span>
+                        <h5>Analytics</h5>
+                    </a>
+                    <a href="#" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> mail_outline  </span>
+                        <h5>Messages</h5>
+                    </a>
+                    <a href="pharmacyProduct.html" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> receipt_long  </span>
+                        <h5>Products</h5>
+                    </a>
+                    <a href="#" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> report_gmailerrorred  </span>
+                        <h5>Reports</h5>
+                    </a>
+                    <a href="#" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> settings  </span>
+                        <h5>settings </h5>
+                    </a>
+                    <a href="Additem.html" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> add  </span>
+                        <h5>Add Product </h5>
+                    </a>
+                    <a onclick="destroySession()" id="anchor">
+                        <span class="material-symbols-outlined" id="icon"> logout  </span>
+                        <h5>logout </h5>
+                    </a>
+                </div>
+            </aside>
+        </div>
+        <div class="col-9">
+            <P class="mainHead">SELLER DASHBOARD</p>
+            <div class="container2">
+                <div class="search-container">
+                    <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn search-icon" type="submit" onclick="searchCustomers()">Search</button>
+                </div>
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <script src="assets/js/fetchAdminDataUser.js"></script>
+            </div>
+            </main>
+        </div>
+    </div>  
+</div> 
+<footer>
+    <div class="container-xxl">
+      <div class="row card-row">
+        <div class="col-lg-4 col-md-5 col-sm-6">
+          <img src="assets\Images\Carousal Images\Medix logo.png" alt="main-logo" class="ms-5" width="150px"><br>
+          <small>Your Ultimate Health-Care Destination!</small>
+          <hr class="hr-thiker">
+          <div class="d-flex">
+            <a href="#"><img src="assets\Images\Footer Logo Bar\Fb logo.png" alt="fb-logo" class="footer-logo-bar"></a>
+            <a href="#"><img src="assets\Images\Footer Logo Bar\Inster logo.png" alt="inster-logo" class="footer-logo-bar"></a>
+            <a href="#"><img src="assets\Images\Footer Logo Bar\linkedIn logo.png" alt="linkedIn-logo" class="footer-logo-bar"></a>
+            <a href="#"><img src="assets\Images\Footer Logo Bar\Twitter logo.png" alt="Twitter-logo" class="footer-logo-bar"></a>
+          </div>
+          <br>
+          <div class="d-grid">
+            <h6>Visit Us : </h6>
+            <small>No 131/03, Pitipana-Thalagala Road,<br>Homagama. </small>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-7 col-sm-6">
+          <div class="d-flex ">
+            <div class="col-6">
+              <div class="d-grid me-2">
+                <h6>Info & Our Service</h6>
+                <a href="#" class="footer-link"><small>Seller Center</small></a>
+                <a href="helpcenter.html" class="footer-link"><small>Help Center</small></a>
+                <a href="#" class="footer-link"><small>About Us</small></a>
+                <a href="#" class="footer-link"><small>Contact Us</small></a>
+                <a href="privacypolicy.html" class="footer-link"><small>Privicy & Policy</small></a>
+                <a href="#" class="footer-link"><small>Terms & Conditions</small></a>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-grid">
+                <h6>Product Overview</h6>
+                <a href="#" class="footer-link"><small>Critical Health Care</small></a>
+                <a href="#" class="footer-link"><small>Beauty Care</small></a>
+                <a href="#" class="footer-link"><small>Personal Care</small></a>
+                <a href="#" class="footer-link"><small>Daily Needs</small></a>
+                <a href="#" class="footer-link"><small>Mother & Baby Care</small></a>
+                <a href="#" class="footer-link"><small>Physical Fitness</small></a>
+              </div>
+            </div>
+
+          </div>
+          <div class="d-flex">
+            <br>
+            <img src="assets\Images\Footer Logo Bar\219_visa.png" width="60px" class="me-3" alt="visacard-logo">
+            <img src="assets\Images\Footer Logo Bar\Mastercard-logo.png" width="40px" height="40px" class="mt-2" alt="mastercard-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="d-flex justify-content-center end-text">
+    <small><p><sup>&copy;</sup>2024 MEDIX. All Rights Reserved.</p></small>
+  </div>
+<script src="assets/js/admin_script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

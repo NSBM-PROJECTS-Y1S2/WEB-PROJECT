@@ -1,0 +1,219 @@
+
+.navbar{
+  background-color: #002e45;
+}
+.nav-item{
+  margin-right: 30px;
+}
+.navbar-nav{
+  margin-left: 30px;
+}
+.navbar-brand{
+  width: 120px;
+  margin: 0%;
+  padding: 0%;
+  padding-left: 10px;
+}
+.navbar-Toggler{
+  background-color: #ffffff00;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+.navbar-Toggler:hover{
+  transform: scale(1.1);
+}
+.cart-img{
+  filter: invert(1);
+  opacity: 0.5;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+.badge{
+  font-size: 9px;
+  margin-top: 1cap;
+  padding: 2px;
+  position: absolute;
+  opacity: 0.7;
+  background-color:#ffffff25;
+
+}
+@media screen and (min-width: 990px){
+  .navbar-Toggler{
+      display: none;
+  }
+}
+.search-bar{
+  background-color: #ffffff13;
+  color: white;
+  border: #002e45;
+}
+.search-bar:focus{
+  background-color: #ffffff00;
+}
+.search-icon{
+  background: #ffffff15;
+}
+.search-icon:hover{
+  background: #ffffff36;
+}
+.dropdown-menu{
+  background-color: #000629;
+  border: none;
+}
+.dropdown-item:hover{
+  opacity: 0.7;
+  transform: scale(1.005);
+  background-color: #002e4500;
+}
+.dropdown-header{
+  color: white;
+  padding-left: 10px;
+}
+#btnDownload{
+  background-color: #00062998;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#btnDownload:hover{
+  background-color: #000629;
+}
+  .container {
+    margin-top: 5%;
+    background-color: #002e45;
+  }
+  #mainHeader{
+    padding-top: 20px ;
+    padding-bottom: 0%;
+    font-size: 40px;
+    font-weight: 630;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0px;
+
+  }
+  .header-right {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .order-details {
+    padding: 20px;
+    font-size: 20px;
+  }
+  
+  .order-details-section {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .order-details-label {
+    font-weight: 500;
+  }
+  
+  .order-details-value {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .billing-info {
+    padding: 20px;
+    font-size: 20px;
+  }
+  
+  .billing-info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  
+  .billing-info-label {
+    font-weight: 500;
+  }
+  
+  .billing-info-value {
+    color: #fff;
+  }
+  
+  .order-summary {
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .order-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+   
+  }
+  
+  .order-summary-table th,
+  .order-summary-table td {
+    border: 1px solid #fff;
+    padding: 8px;
+  }
+  .order-summary-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  .order-summary-table th {
+    color: #fff;
+    font-weight: 500;
+  }
+  .order-summary-label{
+      text-align: left ;
+  }
+  .order-summary-value{
+      text-align: right;
+  }
+  footer{
+    margin-top: 100px;
+    background-color:#002e45;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .hr-thiker{
+    width: 250px;
+    height: 2px;
+    background-color:antiquewhite;
+    border:none;
+  }
+  .footer-logo-bar{
+    filter: invert(0.3);
+    width: 25px;
+    height: 25px;
+    margin-inline-end: 35px;
+    margin-left: 7px;
+  }
+  .footer-logo-bar:hover{
+    opacity: 0.7;
+    transform: scale(1.05);
+    filter: contrast(1);
+  }
+  .footer-link{
+    text-decoration: none;
+    color:white;
+  }
+  .end-text{
+    background-color: #002e45;
+    font-size: smaller;
+  }
+  .all-footer{
+    display: flex;
+    justify-content: center;
+  }

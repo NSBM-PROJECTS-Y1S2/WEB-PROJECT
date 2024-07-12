@@ -8,7 +8,15 @@
     rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
-   <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
+    <!-- Onload Get User Status Snippet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <!--<script src="assets\js\onloadCheckPharmacyStatus.js"></script>-->
+    <script src="assets/js/ProcessProduct.js"></script>
+    <label id="setUserStat" value="NULL"></label>
+    <label id="pharmaStatus" value="NULL"></label>
+    <!-- Onload Get User Status Snippert Stop -->
+    <link rel="stylesheet" href="assets/styles/homeStyles.css" type="text/css">
   </head>
   <body background="assets\Images\BG\BG image.svg">
 <!-- Nav Bar -->
@@ -69,12 +77,12 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">ACCOUNT</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="userLogin.html">CUSTOMER ACCOUNT</a></li>
-              <li><a class="dropdown-item" href="">SELLER ACCOUNT</a></li>
+              <li><a class="dropdown-item" href="userLogin.html" id="UserAcc">CUSTOMER ACCOUNT</a></li>
+              <li><a class="dropdown-item" href="pharmacyLogin.html" id="pharmaAcc">SELLER ACCOUNT</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="cart" href="#">CART
+            <a class="nav-link" id="cart" href="UserCart.html">CART
               <img src="assets\Images\NavBar\cart.svg" class="cart-img" alt="">
               <span class="translate-middle badge" id="Badge">0</span>
             </a>
@@ -94,7 +102,7 @@
           <div class="card-body">
             <h5 class="card-title">CATEGORIES</h5>
             <div class="accordion-item">
-                <a href="http://127.0.0.1:5500/LandingPage.html" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                <a href="LandingPage.html" class="accordion-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
                   PRESCRIPTION ONLY MEDICINES
                 </a>
               <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -242,74 +250,86 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div class="row card-row">
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
+        <div class="row card-row" id="medication-cards">
+          <div>
+            <script>
+              $(document).ready(function() {
+                  $.ajax({
+                      url: 'assets/js/src/fetchMedicationData.php',
+                      method: 'GET',
+                      success: function(data) {
+                          let cardsHtml = '';
+                          data.forEach(medication => {
+                              cardsHtml += `
+                                  <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
+                                      <div class="card" id="product-card">
+                                          <div class="card-header">${medication.prescription === 'required' ? 'ONLY ALLOW WITH PRESCRIPTION' : ''}</div>
+                                          <img src="${medication.imageLink}" class="card-img-top" alt="${medication.medication}">
+                                          <div class="card-body">
+                                              <a class="card-head" href="#">${medication.medication} ${medication.doseData}</a>
+                                              <p class="card-text">${medication.details}</p>
+                                              <div class="d-flex">
+                                                <p class="p-discount">Rs. ${Math.floor(Math.random() * 500) + 1000}.00</p>
+                                                <p class="p-price"></p>
+                                              </div>
+                                              <a href="#" class="btn btn-sm btn-card buy-now" data-id="${medication._id}" data-price="${Math.floor(Math.random() * 1500) + 500}">BUY NOW</a>
+                                              <a href="#" class="btn btn-sm btn-card add-cart" data-id="${medication._id}" data-price="${Math.floor(Math.random() * 1500) + 500}">ADD CART</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              `;
+                          });
+                          $('#medication-cards').html(cardsHtml);
+          
+                          // Attach event handlers after dynamic content is loaded
+                          $('.buy-now').click(function(e) {
+                              e.preventDefault();
+                              const orderId = $(this).data('id');
+                              const price = $(this).data('price');
+                              const orderStat = "buy-now";
+                              const userID = document.getElementById("setUserStat").value;
+                              // alert(userID);
+                              addToCart(orderId, price, orderStat, userID);
+                          });
+          
+                          $('.add-cart').click(function(e) {
+                              e.preventDefault();
+                              const orderId = $(this).data('id');
+                              const price = $(this).data('price');
+                              const orderStat = "add-cart";
+                              const userID = document.getElementById("setUserStat").value;
+                              addToCart(orderId, price, orderStat, userID);
+                          });
+                      },
+                      error: function(xhr, status, error) {
+                          console.error(error);
+                      }
+                  });
+          
+                  function addToCart(orderId, price, orderStat, userID) {
+                      $.ajax({
+                          url: 'assets/js/src/addToCart.php',
+                          method: 'POST',
+                          data: { orderId: orderId, price: price, orderStat: orderStat, userID: userID},
+                          success: function(response) {
+                              console.log('Order added to cart:', response);
+                              if (orderStat == "add-cart") {
+                                  alert("Item Added To Cart !");
+                              } else {
+                                  window.location.href = 'payment.html';
+                              }
+                          },
+                          error: function(xhr, status, error) {
+                              console.error(error);
+                          }
+                      });
+                  }
+              });
+          </script>          
           </div>
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-4 col-md-5 col-sm-8">
-            <div class="card" id="product-card">
-              <div class="card-header">ONLY ALLOW WITH PRESCRIPTION</div>
-              <img src="assets\Images\AMOXICILLIN-SODIUM-INJECTION.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <a class="card-head" href="#">AMOXICILLIN-SODIUM-INJECTION 500MG</a>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="d-flex">
-                  <p class="p-price">2000.00LKR</p>
-                  <p class="p-price-discount">1900.00LKR</p>
-                </div>
-                <a href="#" class="btn btn-sm btn-card">BUY NOW</a>
-                <a href="#" class="btn btn-sm btn-card" id="addCart">ADD CART</a>
-              </div>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
-  </div>
   <footer>
     <div class="container-xxl">
       <div class="row card-row">
@@ -382,4 +402,5 @@
 </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  </body>
+</body>
+</html>

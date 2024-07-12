@@ -8,6 +8,13 @@
     rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous"/>
+    <!-- Onload Get User Status Snippet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/onloadCheckUserStatus.js"></script>
+    <script src="assets/js/ProcessProduct.js"></script>
+    <script src="assets/js/fetchUser.js"></script>
+    <label id="setUserStat" value="NULL"></label>
+    <!-- Onload Get User Status Snippert Stop -->
    <link rel="stylesheet" href="assets/styles/user_account_tab.css" type="text/css">
   </head>
   <body>
@@ -93,10 +100,15 @@
       <p class="mainHeader">User Account</p>
       <div class="col-md-6" id="headerContent">
         <form id="uploadForm">
+          <div class="profileImageContainer">
             <img id="profileImage" src="assets\Images\example man for the profile pic.jpg" alt="Profile Image">
             <input type="file" id="imgInput" accept="image/*">
-            <label class="details">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus commodi adipisci eaque, dolorum alias odit ipsum. Animi harum necessitatibus quo.</label>
-            <button type="submit" id="savebtn" class="btn">Save</button>
+          </div>
+            <!-- <label class="details">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus commodi adipisci eaque, dolorum alias odit ipsum. Animi harum necessitatibus quo.</label> -->
+             <div class="d-flex">
+              <button type="button" onclick="destroySession()" id="gotoOrders" class="btn">Logout</button>
+              <button type="button" onclick="deleteAccount()" id="gotoOrders2" class="btn">Delete Account</button>
+             </div>
         </form>
       </div>
       <div class="col-md-6" id="tables">
@@ -104,23 +116,23 @@
         <table class="table" id="detailsTable">
           <tr>
             <td>Name</td>
-            <td id="tbName">nama watenne methana</td>
+            <td id="tbName">Loading...</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>Date of Birth</td>
-            <td id="tbDOB">thoge upandine</td>
-          </tr>
+            <td id="tbDOB">Loading...</td>
+          </tr> -->
           <tr>
             <td>Contact Information</td>
-            <td id="tbContact">number eka deepan hu##</td>
+            <td id="tbContact">Loading...</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>Address</td>
-            <td id="tbAddress">gedara enna newei bng</td>
-          </tr>
+            <td id="tbAddress">Loading...</td>
+          </tr> -->
         </table>
-        <button class="btn btn-sm" id="editbtn">Edit</button>
-      </div>
+        <!-- <button class="btn btn-sm" id="editbtn">Edit</button> -->
+    </div>    
     </div>
   </div>
   <div id="popupForm" class="popup-form">
@@ -131,12 +143,12 @@
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" class="form-control" id="name" placeholder="Enter Name">
-          <label for="birthDate">Date Of Birth:</label>
-          <input type="date" class="form-control" id="birthDate">
+          <!-- <label for="birthDate">Date Of Birth:</label>
+          <input type="date" class="form-control" id="birthDate"> -->
           <label for="contact">Contact Information:</label>
           <input type="text" class="form-control" id="contact" placeholder="Enter Contact Information">
-          <label for="address">Address:</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter Address">
+          <!-- <label for="address">Address:</label>
+          <input type="text" class="form-control" id="address" placeholder="Enter Address"> -->
           <input type="submit" class="btn" id="editSavebtn" value="Save">
         </div>
       </form>
@@ -145,28 +157,28 @@
   <div class="container-xxl">
     <div class="row">
       <div class="col-md-6" id="tables">
-        <h2>Account Settings</h2>
+        <h2>Account Details</h2>
         <table class="table">
-          <tr>
+          <!-- <tr>
             <td>Username</td>
             <td>$PLACEHOLDER$</td>
-          </tr>
+          </tr> -->
           <tr>
             <td>Email</td>
-            <td>$PLACEHOLDER$</td>
+            <td id="email">$PLACEHOLDER$</td>
           </tr>
           <tr>
             <td>Password</td>
-            <td>$PLACEHOLDER$</td>
+            <td id="passw">$PLACEHOLDER$</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>Two-Factor Authentication</td>
             <td>$PLACEHOLDER$</td>
-          </tr>
+          </tr> -->
         </table>
-        <button class="btn btn-sm" id="editbtn">Edit</button>
+        <!-- <button class="btn btn-sm" id="editbtn">Edit</button> -->
       </div>
-      <div class="col-md-6" id="tables">
+      <!-- <div class="col-md-6" id="tables">
         <h2>Medical Information</h2>
         <table class="table">
           <tr>
@@ -186,7 +198,7 @@
             <td>Access to recent lab results, with the ability to download reports</td>
           </tr>
         </table>
-      </div>
+      </div> -->
 
       <div class="col-md-6" id="tables">
         <h2>Prescription Management</h2>
@@ -212,7 +224,7 @@
         </table>
       </div>
     </div>
-    <button type="submit" class="btn" id="mainSavebtn">Save Changes</button>
+    <!-- <button type="submit" class="btn" id="mainSavebtn">Save Changes</button> -->
   </div>
 
   <!--footer-->

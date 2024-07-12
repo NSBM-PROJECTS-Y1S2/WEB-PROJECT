@@ -13,6 +13,7 @@ document.getElementById('imgInput').addEventListener('change', function(event) {
     }
 });
 
+
 document.getElementById('editbtn').addEventListener('click', function() {
     var popupForm = document.getElementById('popupForm');
     var close = document.getElementById('closeButton');
@@ -21,3 +22,11 @@ document.getElementById('editbtn').addEventListener('click', function() {
         popupForm.style.display = 'none';
     }
 });
+// document.getElementById('editbtn').addEventListener('click', function() {
+//     var popupForm = document.getElementById('popupForm');
+//     var close = document.getElementById('closeButton');
+//     popupForm.style.display = 'block';
+//     close.onclick = function() {
+//         popupForm.style.display = 'none';
+//     }
+// });

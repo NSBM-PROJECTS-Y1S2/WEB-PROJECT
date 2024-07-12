@@ -165,9 +165,11 @@ body{
     opacity: 0.5;
 }
 .card-img-top{
-    width: 60%;
+    margin-top: 3%;
     align-self: center;
-    border-radius: 0%;
+    border-radius: 5%;
+    width: 200px;
+    height: 200px;
 }
 #product-card{
     background-color: #002e45c9;
@@ -189,9 +191,10 @@ body{
     margin-bottom: 1%;
 }
 .btn-card{
+    margin-top: 5%;
     background-color: #ffffff25;
     margin-right: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
   }
 .btn-card:hover{
     transform: scale(1.03);

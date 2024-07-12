@@ -1,5 +1,8 @@
 <?php
 // MongoDB connection parameters
+
+require '../../vendor/autoload.php';
+
 $mongoUri = "mongodb://localhost:27017";
 $dbName = "test";
 

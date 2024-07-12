@@ -11,7 +11,7 @@ require '../../../../vendor/autoload.php';
 
 $mongoUri = "mongodb://localhost:27017";
 $dbName = "MEDIX";
-$collectionName = "users";
+$collectionName = "Pharmacy";
 
 try {
     $mongoClient = new MongoDB\Client($mongoUri);
@@ -19,16 +19,18 @@ try {
     $collection = $db->$collectionName;
 
     $document = array(
-        'UserFirstName' => $_POST['FName'],
-        'UserLastName' => $_POST['LName'],
-        'UserPhoneNo' => $_POST['PhoneNo'],
-        'UserEmail' => $_POST['Email'],
-        'UserPassword' => $_POST['Password']
+        'PharmacyName' => $_POST['pharmacyName'],
+        'OwnerName' => $_POST['ownName'],
+        'PharmacyPhone' => $_POST['pharmaPhone'],
+        'OwnerPhone' => $_POST['ownPhone'],
+        'PharmacyAddress' => $_POST['Address'],
+        'PharmacyEmail' => $_POST['Email'],
+        'PharmacyPassword' => $_POST['Password']
     );
 
     $collection->insertOne($document);
     echo "Registration Successful.";
-} catch (MongoDB\Driver\Exception\Exception $e) {
-    echo "Error: " . $e->getMessage();
+} catch (MongoDB\Driver\Exception\Exception $ex) {
+    echo "Error: " . $ex->getMessage();
 }
 ?>
